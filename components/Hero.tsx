@@ -18,7 +18,7 @@ export default function Hero() {
             <br />
             and i <span className="italic text-accent">design</span>!
           </h1>
-          <p className="mt-6 max-w-lg text-xl font-medium leading-[26px] text-muted sm:mt-8 sm:text-[25px] sm:leading-[30px]">
+          <p className="mt-6 max-w-lg text-xl font-medium leading-[26px] text-foreground/80 sm:mt-8 sm:text-[25px] sm:leading-[30px]">
             {profile.tagline}
           </p>
 

@@ -75,7 +75,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_1.2fr] md:gap-8">
         <div>
           <h3 className="font-serif text-2xl sm:text-3xl">{project.title}</h3>
-          <p className="mt-3 max-w-md text-[21px] font-semibold leading-[26px] text-muted sm:mt-4 sm:text-[25px] sm:leading-[30px]">
+          <p className="mt-3 max-w-md text-[21px] font-semibold leading-[26px] text-foreground/80 sm:mt-4 sm:text-[25px] sm:leading-[30px]">
             {project.description}
           </p>
         </div>
