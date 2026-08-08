@@ -133,15 +133,26 @@ export default function Lanyard() {
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
       >
+        {/* lanyard.svg has its own clasp baked into the bottom 26% — crop it
+            off and layer the standalone clasp asset instead, so the badge can
+            hook into a fully visible metal clasp like the Figma design */}
+        <div className="h-[174px] overflow-hidden">
+          <img
+            src="/assets/lanyard.svg"
+            alt=""
+            draggable={false}
+            className="h-[235px] w-auto"
+          />
+        </div>
         <img
-          src="/assets/lanyard.svg"
+          src="/assets/lanyard-clasp.svg"
           alt=""
           draggable={false}
-          className="h-[235px] w-auto"
+          className="relative z-20 -mt-px h-[61px] w-auto"
         />
         <div
           ref={cardRef}
-          className="-mt-9 will-change-transform"
+          className="relative z-10 -mt-[46px] will-change-transform"
           style={{
             transformOrigin: "50% 24px",
             transform: `rotate(${START_CARD_ANGLE - START_ANGLE}rad)`,
