@@ -20,7 +20,8 @@ export default function Experience() {
               >
                 <span className="font-serif text-xl sm:text-2xl">{job.company}</span>
                 <span className="text-lg font-medium text-muted sm:text-xl">
-                  {job.role} ({job.period})
+                  {job.role}
+                  {job.period ? ` (${job.period})` : ""}
                 </span>
               </Reveal>
             </li>

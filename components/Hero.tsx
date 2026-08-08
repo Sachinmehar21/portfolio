@@ -10,7 +10,7 @@ const socials = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pb-10 pt-28 sm:pt-44">
+    <section id="top" className="dot-grid relative overflow-hidden pb-10 pt-28 sm:pt-44">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-6 sm:px-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <h1 className="font-serif text-[44px] leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">

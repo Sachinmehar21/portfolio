@@ -60,7 +60,7 @@ export const projects = [
     href: "#",
   },
   {
-    title: "CarpoolingApp",
+    title: "carpoolingapp",
     description:
       "Designed a seamless flight booking application focused on simplicity and ease of use. Every screen was crafted to help users search, compare, and book flights effortlessly with a clear and intuitive experience.",
     image: "/assets/project-carpooling-card.svg",
@@ -68,25 +68,53 @@ export const projects = [
     background: "#ffe066",
     href: "#",
   },
+  {
+    title: "flight booking app",
+    description:
+      "Designed a seamless flight booking application focused on simplicity and ease of use. Every screen was crafted to help users search, compare, and book flights effortlessly with a clear and intuitive experience.",
+    // "cover" fills the panel with the image; these exports already carry
+    // their colored background, so `background` just matches it exactly.
+    image: "/assets/project-flight-booking.svg",
+    layout: "cover" as const,
+    background: "#D1F76C",
+    href: "#",
+  },
+  {
+    title: "botstream",
+    description:
+      "Designed a seamless flight booking application focused on simplicity and ease of use. Every screen was crafted to help users search, compare, and book flights effortlessly with a clear and intuitive experience.",
+    image: "/assets/project-botstream.svg",
+    layout: "cover" as const,
+    background: "#6C8CF7",
+    href: "#",
+  },
+  {
+    title: "floo",
+    description:
+      "Designed a seamless flight booking application focused on simplicity and ease of use. Every screen was crafted to help users search, compare, and book flights effortlessly with a clear and intuitive experience.",
+    image: "/assets/project-floo.svg",
+    layout: "cover" as const,
+    background: "#F7A86C",
+    href: "#",
+  },
 ];
 
-// NOTE: roles/dates below are best-effort reads from the Figma frame — a few
-// were too small to read reliably. Double-check before publishing.
 export const experience = [
   {
-    company: "A7Billion",
-    role: "UX Designer",
-    period: "September 2025 – Present",
+    company: "47billion",
+    role: "ux designer",
+    period: "september 2025 – present",
   },
   {
-    company: "Rombay Softwares",
-    role: "Executive UI/UX Designer",
-    period: "November 2024 – September 2025",
+    // The Figma frame shows no period for this row.
+    company: "bombay softwares",
+    role: "executive ui/ux designer",
+    period: "",
   },
   {
-    company: "Google",
-    role: "UI/UX Designer",
-    period: "February 2024 – February 2025",
+    company: "eulogik",
+    role: "ui/ux designer",
+    period: "february 2024 – february 2025",
   },
 ];
 

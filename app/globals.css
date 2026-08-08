@@ -17,8 +17,28 @@
   --color-footer: var(--footer);
   --color-card-pink: var(--card-pink);
   --font-sans: var(--font-darker-grotesque);
-  --font-serif: var(--font-instrument-serif);
+  --font-serif: "Awesome Serif", var(--font-instrument-serif), serif;
   --font-grotesque: var(--font-darker-grotesque);
+}
+
+/* Sanskrati's heading font. Drop the licensed files into public/fonts/
+   (see public/fonts/README.md); until they exist the site silently falls
+   back to Instrument Serif. */
+@font-face {
+  font-family: "Awesome Serif";
+  src: url("/fonts/AwesomeSerif-Regular.woff2") format("woff2"),
+    url("/fonts/AwesomeSerif-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Awesome Serif";
+  src: url("/fonts/AwesomeSerif-Italic.woff2") format("woff2"),
+    url("/fonts/AwesomeSerif-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
 }
 
 /* Scroll-reveal: elements fade + rise as they enter the viewport */
@@ -38,6 +58,9 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-darker-grotesque), sans-serif;
+  /* The whole design is lowercase — enforce it everywhere so no stray
+     capitalised copy sneaks in. */
+  text-transform: lowercase;
 }
 
 /* Subtle dot-grid backdrop used across the light sections */
@@ -46,10 +69,11 @@ body {
   background-size: 22px 22px;
 }
 
-/* Postage-stamp scalloped edge for project cards */
+/* Postage-stamp scalloped edge for project cards.
+   Sized to match the Figma cards: scallop pitch ≈4% of card width. */
 .stamp {
-  --sp: 18px;
-  --hole: 5.5px;
+  --sp: 46px;
+  --hole: 13.5px;
   mask:
     linear-gradient(#000 0 0) center / calc(100% - var(--sp)) calc(100% - var(--sp)) no-repeat,
     radial-gradient(circle var(--hole), #0000 98%, #000) calc(var(--sp) / -2) calc(var(--sp) / -2) / var(--sp) var(--sp);

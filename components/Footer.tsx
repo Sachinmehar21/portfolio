@@ -27,14 +27,14 @@ export default function Footer() {
             rel="noreferrer"
             className="underline-offset-4 hover:underline"
           >
-            Linkedin ↗
+            linkedin <span className="text-[0.65em]">↗</span>
           </a>
           <span className="text-white/30">|</span>
           <a
             href={profile.resumeUrl}
             className="underline-offset-4 hover:underline"
           >
-            Resume ↗
+            resume <span className="text-[0.65em]">↗</span>
           </a>
         </div>
       </Reveal>

@@ -2,6 +2,7 @@
 import { projects } from "@/lib/data";
 import Reveal from "@/components/Reveal";
 import Parallax from "@/components/Parallax";
+import StackCard from "@/components/StackCard";
 
 export default function Projects() {
   return (
@@ -14,8 +15,8 @@ export default function Projects() {
         </Reveal>
 
         <div className="mt-14">
-          {projects.map((project, i) => (
-            <div key={project.title} className="sticky top-[110px] mb-16 last:mb-0">
+          {projects.map((project) => (
+            <StackCard key={project.title}>
               <a
                 href={project.href}
                 className="stamp block bg-white p-6 transition-transform hover:-translate-y-1 sm:p-10"
@@ -38,6 +39,12 @@ export default function Projects() {
                           alt={`${project.title} preview`}
                           className="absolute left-1/2 top-1/2 h-[92%] w-auto -translate-x-1/2 -translate-y-1/2"
                         />
+                      ) : project.layout === "cover" ? (
+                        <img
+                          src={project.image}
+                          alt={`${project.title} preview`}
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
                       ) : (
                         <img
                           src={project.image}
@@ -50,7 +57,7 @@ export default function Projects() {
                   </div>
                 </div>
               </a>
-            </div>
+            </StackCard>
           ))}
         </div>
       </div>
