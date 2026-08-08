@@ -7,9 +7,9 @@ export const profile = {
   email: "sanskratimoolchandani@gmail.com",
   phone: "+91 7067785857",
   socials: {
-    linkedin: "https://www.linkedin.com/",
-    dribbble: "https://dribbble.com/",
-    behance: "https://www.behance.net/",
+    linkedin: "https://www.linkedin.com/in/sanskrati-moolchandani-38b440225/",
+    dribbble: "https://dribbble.com/Sanskrati-moolchandani",
+    behance: "https://www.behance.net/sanskrimoolcha",
   },
   resumeUrl: "#",
 };
