@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer id="chat" className="mt-16 bg-footer text-white">
       <Reveal className="mx-auto max-w-4xl px-6 pt-20 text-center sm:px-10">
-        <p className="mx-auto max-w-2xl text-2xl font-semibold leading-snug sm:text-[34px]">
+        <p className="mx-auto max-w-2xl text-2xl font-semibold leading-[1.15] sm:text-[34px]">
           {footer.message}
         </p>
 
