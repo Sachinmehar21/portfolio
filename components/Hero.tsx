@@ -11,9 +11,11 @@ const socials = [
 export default function Hero() {
   return (
     <section id="top" className="dot-grid relative overflow-hidden pb-10 pt-28 sm:pt-44">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-10 px-6 sm:px-12 lg:grid-cols-2 lg:gap-16">
+      {/* max-w = nav's 1030px pill + this padding, so the heading's left edge
+          lines up exactly with the header pill at every viewport */}
+      <div className="mx-auto grid max-w-[1094px] grid-cols-1 items-start gap-10 px-4 sm:px-8 lg:grid-cols-2 lg:gap-16">
         <div>
-          <h1 className="font-serif text-[44px] leading-[1.05] tracking-tight sm:text-7xl lg:text-8xl">
+          <h1 className="font-serif text-[44px] leading-[1.05] tracking-tight sm:text-7xl lg:text-[84px]">
             hi, i&rsquo;m {profile.firstName} <span className="text-accent">*</span>
             <br />
             and i <span className="italic text-accent">design</span>!

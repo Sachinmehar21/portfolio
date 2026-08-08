@@ -17,7 +17,7 @@ export default function Nav() {
           className="pointer-events-none absolute inset-0 hidden lg:block"
           style={{
             background:
-              "radial-gradient(140px 200% at calc(50% + 320px) 50%, rgba(0,0,0,0.22), rgba(0,0,0,0.08) 45%, transparent 72%)",
+              "radial-gradient(140px 200% at calc(50% + 273px) 50%, rgba(0,0,0,0.22), rgba(0,0,0,0.08) 45%, transparent 72%)",
           }}
         />
         <a href="#top" aria-label="Home">
