@@ -15,8 +15,12 @@ export default function Hero() {
           lines up exactly with the header pill at every viewport */}
       <div className="mx-auto grid max-w-[1094px] grid-cols-1 items-start gap-10 px-4 sm:px-8 lg:grid-cols-2 lg:gap-16">
         <div>
-          <h1 className="font-serif text-[44px] leading-[1.05] tracking-tight sm:text-7xl lg:text-[84px]">
-            hi, i&rsquo;m {profile.firstName} <span className="text-accent">*</span>
+          <h1 className="font-serif text-[44px] leading-[1.05] tracking-tight sm:text-7xl lg:text-[clamp(64px,5.5vw,80px)]">
+            {/* nowrap: font metrics differ across OSes (wider on macOS), and if
+                this line ever wraps, the asterisk lands alone on its own line */}
+            <span className="whitespace-nowrap">
+              hi, i&rsquo;m {profile.firstName} <span className="text-accent">*</span>
+            </span>
             <br />
             and i <span className="italic text-accent">design</span>!
           </h1>
