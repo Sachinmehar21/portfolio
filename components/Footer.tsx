@@ -42,7 +42,7 @@ export default function Footer() {
       <img
         src="/assets/flamingo.svg"
         alt=""
-        className="mx-auto mt-12 block h-28 w-auto sm:mt-16 sm:h-40"
+        className="mx-auto mt-12 block h-32 w-auto sm:mt-16 sm:h-40"
       />
     </footer>
   );
