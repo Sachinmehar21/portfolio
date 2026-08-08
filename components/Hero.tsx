@@ -22,7 +22,7 @@ export default function Hero() {
             {profile.tagline}
           </p>
 
-          <div className="mt-12 flex items-end justify-between gap-6 sm:mt-28">
+          <div className="mt-12 flex flex-col gap-5 sm:mt-28 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
             <div>
               <p className="text-lg font-medium text-muted">Say hi to me at</p>
               <a
@@ -32,14 +32,14 @@ export default function Hero() {
                 {profile.email}
               </a>
             </div>
-            <ul className="flex items-center gap-5">
+            <ul className="flex items-center gap-6 sm:gap-5">
               {socials.map((s) => (
                 <li key={s.name}>
                   <a href={s.href} target="_blank" rel="noreferrer" aria-label={s.name}>
                     <img
                       src={s.icon}
                       alt=""
-                      className="h-6 w-6 opacity-80 transition-opacity hover:opacity-100"
+                      className="h-7 w-7 opacity-80 transition-opacity hover:opacity-100 sm:h-6 sm:w-6"
                     />
                   </a>
                 </li>
@@ -50,11 +50,11 @@ export default function Hero() {
 
         {/* Lanyard + ID badge hanging from the top edge, strap passing over the nav */}
         {/* Phones get a static tilted badge; the physics lanyard needs the tall column */}
-        <div className="mt-6 flex justify-center lg:hidden">
+        <div className="mt-8 flex justify-center lg:hidden">
           <img
             src="/assets/badge-card.svg"
             alt="ID badge with a photo of Sanskrati reading UX Designer"
-            className="w-[260px] rotate-3 drop-shadow-xl"
+            className="w-[290px] rotate-3 drop-shadow-xl"
           />
         </div>
         <div className="relative hidden min-h-[520px] justify-center lg:flex">
