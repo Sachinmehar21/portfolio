@@ -50,6 +50,7 @@ export const about = {
 export const projects = [
   {
     title: "7seers",
+    slug: "7seers",
     description:
       "Designed a seamless flight booking application focused on simplicity and ease of use. Every screen was crafted to help users search, compare, and book flights effortlessly with a clear and intuitive experience.",
     image: "/assets/project-7seers.svg",
@@ -57,19 +58,21 @@ export const projects = [
     // "crop" fills the panel with the right side of a wider image.
     layout: "center" as const,
     background: "#ff9ecf",
-    href: "#",
+    href: "/work/7seers",
   },
   {
     title: "carpoolingapp",
+    slug: "carpooling",
     description:
       "Designed a seamless flight booking application focused on simplicity and ease of use. Every screen was crafted to help users search, compare, and book flights effortlessly with a clear and intuitive experience.",
     image: "/assets/project-carpooling-card.svg",
     layout: "crop" as const,
     background: "#ffe066",
-    href: "#",
+    href: "/work/carpooling",
   },
   {
     title: "flight booking app",
+    slug: "flight-booking",
     description:
       "Designed a seamless flight booking application focused on simplicity and ease of use. Every screen was crafted to help users search, compare, and book flights effortlessly with a clear and intuitive experience.",
     // "cover" fills the panel with the image; these exports already carry
@@ -77,25 +80,27 @@ export const projects = [
     image: "/assets/project-flight-booking.svg",
     layout: "cover" as const,
     background: "#D1F76C",
-    href: "#",
+    href: "/work/flight-booking",
   },
   {
     title: "botstream",
+    slug: "botstream",
     description:
       "Designed a seamless flight booking application focused on simplicity and ease of use. Every screen was crafted to help users search, compare, and book flights effortlessly with a clear and intuitive experience.",
     image: "/assets/project-botstream.svg",
     layout: "cover" as const,
     background: "#6C8CF7",
-    href: "#",
+    href: "/work/botstream",
   },
   {
     title: "floo",
+    slug: "floo",
     description:
       "Designed a seamless flight booking application focused on simplicity and ease of use. Every screen was crafted to help users search, compare, and book flights effortlessly with a clear and intuitive experience.",
     image: "/assets/project-floo.svg",
     layout: "cover" as const,
     background: "#F7A86C",
-    href: "#",
+    href: "/work/floo",
   },
 ];
 

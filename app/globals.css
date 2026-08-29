@@ -9,6 +9,12 @@
   --card-pink: #ff9ecf;
 }
 
+/* Case-study pages switch to their fixed 1049px two-column layout here —
+   Tailwind's lg (1024px) is narrower than that layout. */
+@theme {
+  --breakpoint-cs: 1100px;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -19,6 +25,7 @@
   --font-sans: var(--font-darker-grotesque);
   --font-serif: "Awesome Serif", var(--font-instrument-serif), serif;
   --font-grotesque: var(--font-darker-grotesque);
+  --font-quicksand: var(--font-quicksand);
 }
 
 /* Sanskrati's heading font. Drop the licensed files into public/fonts/
@@ -77,4 +84,37 @@ body {
   mask:
     linear-gradient(#000 0 0) center / calc(100% - var(--sp)) calc(100% - var(--sp)) no-repeat,
     radial-gradient(circle var(--hole), #0000 98%, #000) calc(var(--sp) / -2) calc(var(--sp) / -2) / var(--sp) var(--sp);
+}
+
+/* Same stamp edge, but with a fixed number of scallops per side (--sx across,
+   --sy down) so the corners always land on a whole hole at any width. The
+   mask-position maths puts the first hole exactly on the edge:
+   offset = (box - tile) * p  with  p = 0.5 / (count - 1)  gives  tile / 2.
+   Case-study hero: 24 × 9 holes on the 845 × 324 card in Figma. */
+.stamp-fluid {
+  --sx: 24;
+  --sy: 9;
+  --hole: 13px;
+  mask:
+    linear-gradient(#000 0 0) center /
+      calc(100% - 100% / var(--sx)) calc(100% - 100% / var(--sy)) no-repeat,
+    radial-gradient(circle var(--hole), #0000 98%, #000)
+      calc(50% / (var(--sx) - 1)) calc(50% / (var(--sy) - 1)) /
+      calc(100% / var(--sx)) calc(100% / var(--sy));
+}
+/* 7seers stat tiles: 1px gradient border (pink → violet → fading out on the
+   right), drawn with two stacked backgrounds so the corners stay rounded. */
+.stat-card {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--background), var(--background)) padding-box,
+    linear-gradient(90deg, #df45a4 0%, #755cff 45%, rgba(117, 92, 255, 0.12) 100%) border-box;
+}
+
+@media (max-width: 640px) {
+  .stamp-fluid {
+    --sx: 12;
+    --sy: 6;
+    --hole: 10px;
+  }
 }
