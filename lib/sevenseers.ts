@@ -18,12 +18,14 @@ export const sevenseers = {
     { label: "research", id: "research" },
     { label: "key-insights", id: "key-insights" },
     { label: "ideation", id: "ideation" },
-    // Not in the frame yet — the design lists them, so they stay in the index.
+    // Not written up yet — the design lists them, so they stay in the index.
     { label: "solution" },
     { label: "flow/screen design" },
     { label: "brand identity" },
     { label: "reflection" },
   ],
+  comingSoon:
+    "the personas, the solution, the screens, brand identity and reflection are still being written up. they land here soon.",
   overview: {
     text: "7seers is an ai-powered platform that helps tier 2/3 college students in india get placed. students get a role-specific readiness score, practice with ai mock interviews, fix skill gaps through guided learning, and get matched to jobs they actually qualify for. tpos get real-time batch visibility instead of excel sheets.",
     meta: [

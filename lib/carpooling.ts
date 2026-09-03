@@ -19,6 +19,8 @@ export const carpooling = {
     { label: "brand identity" },
     { label: "reflection" },
   ],
+  comingSoon:
+    "the persona, brand identity and reflection are still being written up. they land here soon.",
   overview: {
     text: "a carpooling app designed for frequent long- and short-distance travellers to share rides and split fuel costs. it connects people heading in the same direction, helping riders save on expensive cab fares while allowing drivers to share their petrol expenses.",
     meta: [

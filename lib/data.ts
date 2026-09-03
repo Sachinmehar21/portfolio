@@ -11,7 +11,10 @@ export const profile = {
     dribbble: "https://dribbble.com/Sanskrati-moolchandani",
     behance: "https://www.behance.net/sanskrimoolcha",
   },
-  resumeUrl: "#",
+  // The PDF lives in public/ so the link is a plain download; the preview
+  // is the same page rendered out for the resume block on the home page.
+  resumeUrl: "/sanskrati-moolchandani-resume.pdf",
+  resumePreview: "/assets/resume-preview.webp",
 };
 
 export type AboutSegment = { text?: string; sticker?: string };

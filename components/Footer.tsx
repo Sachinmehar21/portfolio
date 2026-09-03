@@ -32,6 +32,8 @@ export default function Footer() {
           <span className="text-white/30">|</span>
           <a
             href={profile.resumeUrl}
+            target="_blank"
+            rel="noreferrer"
             className="underline-offset-4 hover:underline"
           >
             resume <span className="text-[0.65em]">↗</span>

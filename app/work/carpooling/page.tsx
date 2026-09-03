@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import CaseStudyPage from "@/components/case-study/CaseStudyPage";
-import SectionHeading from "@/components/case-study/SectionHeading";
 import Persona from "@/components/case-study/Persona";
+import SectionHeading from "@/components/case-study/SectionHeading";
+import ComingSoonVeil from "@/components/case-study/ComingSoonVeil";
 import { body, cardShadow } from "@/components/case-study/styles";
 import { carpooling as c } from "@/lib/carpooling";
 
@@ -126,15 +127,10 @@ export default function CarpoolingCaseStudy() {
         </div>
       </section>
 
-      {/* user persona */}
-      <Persona
-        heading="user persona"
-        persona={{ ...c.persona, photoAlt: `${c.persona.name}, standing in a garden` }}
-        className="mt-[43px]"
-      />
+      {/* Everything from the persona on is still being written up: it stays
 
       {/* key insights */}
-      <section id="key-insights" className="mt-12 scroll-mt-[120px]">
+      <section id="key-insights" className="mt-[43px] scroll-mt-[120px]">
         <SectionHeading>key insights</SectionHeading>
         <ol className="mt-[10px] grid gap-x-[13px] gap-y-[11px] sm:grid-cols-2 cs:pl-[13px]">
           {c.insights.map((text, i) => (
@@ -223,6 +219,14 @@ export default function CarpoolingCaseStudy() {
           ))}
         </ul>
       </section>
+
+      {/* the persona is the last thing written up so far */}
+      <ComingSoonVeil className="mt-[60px]" note={c.comingSoon}>
+        <Persona
+          heading="user persona"
+          persona={{ ...c.persona, photoAlt: `${c.persona.name}, standing in a garden` }}
+        />
+      </ComingSoonVeil>
     </CaseStudyPage>
   );
 }

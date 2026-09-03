@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import CaseStudyPage from "@/components/case-study/CaseStudyPage";
 import SectionHeading from "@/components/case-study/SectionHeading";
 import Persona from "@/components/case-study/Persona";
+import ComingSoonVeil from "@/components/case-study/ComingSoonVeil";
 import { body, cardShadow, cardTitle } from "@/components/case-study/styles";
 import { sevenseers as s } from "@/lib/sevenseers";
 
@@ -292,11 +293,8 @@ export default function SevenSeersCaseStudy() {
         </ol>
       </section>
 
-      {/* user personas */}
-      <Persona heading="user personas" persona={s.persona} className="mt-[72px]" />
-
       {/* ideation */}
-      <section id="ideation" className="mt-[83px] scroll-mt-[120px]">
+      <section id="ideation" className="mt-[72px] scroll-mt-[120px]">
         <SectionHeading>ideation</SectionHeading>
         <figure className="mt-[2px] flex justify-center bg-white px-4 py-[11px]">
           <img
@@ -309,6 +307,11 @@ export default function SevenSeersCaseStudy() {
           />
         </figure>
       </section>
+
+      {/* the personas are the last thing written up so far */}
+      <ComingSoonVeil className="mt-[60px]" note={s.comingSoon}>
+        <Persona heading="user personas" persona={s.persona} />
+      </ComingSoonVeil>
     </CaseStudyPage>
   );
 }
