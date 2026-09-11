@@ -18,7 +18,7 @@ export default function CarpoolingCaseStudy() {
     <CaseStudyPage
       title={c.title}
       nav={c.nav}
-      hero={{ src: c.hero.image, alt: c.hero.alt, width: 778, height: 263 }}
+      hero={{ src: c.hero.image, alt: c.hero.alt, width: 1556, height: 526 }}
       accent="#bdb1f8"
     >
       {/* overview */}

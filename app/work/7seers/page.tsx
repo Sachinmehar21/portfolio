@@ -323,7 +323,10 @@ export default function SevenSeersCaseStudy() {
       <section id="screens" className="mt-9 scroll-mt-[120px]">
         <SectionHeading>screens</SectionHeading>
         <div className="relative mt-[3px]">
-          <ul className="space-y-[26px] bg-[linear-gradient(180deg,#eef0f8_0%,#f5f6fb_55%,#ffffff_100%)] px-4 py-[26px] sm:px-[30px]">
+          {/* Held flat at #eef0f8 for the first screen — that colour is
+              flattened into the image behind its drop shadow, so the band
+              has to match it there or the edge shows — then fading out. */}
+          <ul className="space-y-[26px] bg-[linear-gradient(180deg,#eef0f8_0%,#eef0f8_54%,#ffffff_100%)] px-4 py-[26px] sm:px-[30px]">
             {s.screens.map((screen) => (
               <li key={screen.src}>
                 <img

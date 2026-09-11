@@ -4,8 +4,9 @@
 export const carpooling = {
   title: "carpoolingapp",
   hero: {
-    // Re-exported lavender version; the old hero.webp was the yellow theme.
-    image: "/assets/rideabit/hero.svg",
+    // Lavender theme, replacing the old yellow one. Rasterised at 2× from the
+    // Figma SVG, which carried full-res bitmaps and weighed 3.5MB.
+    image: "/assets/rideabit/hero.webp",
     alt: "collage of the carpooling app home screen, riders in cars and a card reading all riders are verified",
   },
   nav: [

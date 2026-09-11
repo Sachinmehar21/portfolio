@@ -182,7 +182,7 @@ export const sevenseers = {
   persona: {
     name: "nirmala",
     age: "22 year",
-    photo: `${A}/persona-nirmala.svg`,
+    photo: `${A}/persona-nirmala.webp`,
     photoAlt: "nirmala, standing in front of a wall of branches",
     description:
       "college-going student and is in her last year of college, searching for internship or a full time job.",
@@ -254,10 +254,15 @@ export const sevenseers = {
   // Wide desktop captures rather than carpooling's phone grid.
   screens: [
     {
-      src: `${A}/screen-01.svg`,
+      // Rasterised at 2× from the Figma SVG, which was 2.4MB of embedded
+      // bitmap and arrived too late to paint before you scrolled past it.
+      // The export's margin carries a drop shadow over transparency, so it
+      // is flattened onto the band colour and the band holds that colour
+      // flat behind this image — see the gradient stops on the page.
+      src: `${A}/screen-01.webp`,
       alt: "readiness panel over a job listing: a 42% readiness score with its jri breakdown, and the backend developer role it is measured against",
-      width: 789,
-      height: 543,
+      width: 1578,
+      height: 1086,
     },
     {
       src: `${A}/screen-02.svg`,

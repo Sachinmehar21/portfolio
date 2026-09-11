@@ -12,7 +12,10 @@ export default function Nav({ variant = "home" }: { variant?: "home" | "page" })
   const prefix = variant === "page" ? "/" : "";
   return (
     <header className="absolute inset-x-0 top-6 z-20 px-4 sm:px-8">
-      <nav className="relative mx-auto flex h-14 max-w-[1030px] items-center justify-between overflow-hidden rounded-full bg-white pl-3 pr-4 shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:h-16 sm:pl-4 sm:pr-14">
+      {/* font-grotesque is pinned here rather than inherited: case-study pages
+          wrap their content in font-quicksand, which would otherwise widen the
+          links and make the bar sit differently to the one on the home page. */}
+      <nav className="relative mx-auto flex h-14 max-w-[1030px] items-center justify-between overflow-hidden rounded-full bg-white pl-3 pr-4 font-grotesque shadow-[0_2px_12px_rgba(0,0,0,0.06)] sm:h-16 sm:pl-4 sm:pr-14">
         {/* Soft shadow the lanyard strap casts on the pill; centered on the
             strap, which hangs at the middle of the hero's right column */}
         {variant === "home" && (
