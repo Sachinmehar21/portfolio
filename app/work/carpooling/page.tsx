@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import CaseStudyPage from "@/components/case-study/CaseStudyPage";
 import Persona from "@/components/case-study/Persona";
 import SectionHeading from "@/components/case-study/SectionHeading";
-import ComingSoonVeil from "@/components/case-study/ComingSoonVeil";
+import KeyInsights from "@/components/case-study/KeyInsights";
+import TypeSpecimen from "@/components/case-study/TypeSpecimen";
 import { body, cardShadow } from "@/components/case-study/styles";
 import { carpooling as c } from "@/lib/carpooling";
 
@@ -12,34 +13,13 @@ export const metadata: Metadata = {
   description: c.overview.text,
 };
 
-// Hand-drawn curved arrow used twice in the solution section. `up` mirrors
-// it so the same stroke points up-right instead of down-right.
-function CurvedArrow({ color, up = false }: { color: string; up?: boolean }) {
-  return (
-    <svg
-      aria-hidden
-      width="72"
-      height="64"
-      viewBox="0 0 72 64"
-      fill="none"
-      stroke={color}
-      strokeWidth="8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      style={up ? { transform: "scaleY(-1)" } : undefined}
-    >
-      <path d="M5 7c22 2 44 14 61 46" />
-      <path d="M46 46l20 7 4-21" />
-    </svg>
-  );
-}
-
 export default function CarpoolingCaseStudy() {
   return (
     <CaseStudyPage
       title={c.title}
       nav={c.nav}
-      hero={{ src: c.hero.image, alt: c.hero.alt, width: 1337, height: 450 }}
+      hero={{ src: c.hero.image, alt: c.hero.alt, width: 778, height: 263 }}
+      accent="#bdb1f8"
     >
       {/* overview */}
       <section id="overview" className="mt-[22px] scroll-mt-[120px]">
@@ -127,28 +107,16 @@ export default function CarpoolingCaseStudy() {
         </div>
       </section>
 
-      {/* Everything from the persona on is still being written up: it stays
+      {/* user persona — the frame puts her between the research she came out
+          of and the insights she leads to */}
+      <Persona
+        className="mt-[47px]"
+        heading="user persona"
+        persona={{ ...c.persona, photoAlt: `${c.persona.name}, standing in a garden` }}
+      />
 
       {/* key insights */}
-      <section id="key-insights" className="mt-[43px] scroll-mt-[120px]">
-        <SectionHeading>key insights</SectionHeading>
-        <ol className="mt-[10px] grid gap-x-[13px] gap-y-[11px] sm:grid-cols-2 cs:pl-[13px]">
-          {c.insights.map((text, i) => (
-            <li
-              key={text}
-              className="flex items-start gap-[13px] rounded-[10px] bg-[#edffe1] px-[14px] pb-2 pt-4"
-            >
-              <span
-                aria-hidden
-                className="-mt-px flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-full bg-[#4dbb04] text-[14px] font-bold leading-none text-white"
-              >
-                {i + 1}
-              </span>
-              <p className="text-[14px] font-semibold leading-[22px] text-[#4dbb04]">{text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
+      <KeyInsights className="mt-[43px]" heading={c.insights.heading} items={c.insights.items} />
 
       {/* ideation */}
       <section id="ideation" className="mt-[49px] scroll-mt-[120px]">
@@ -168,7 +136,10 @@ export default function CarpoolingCaseStudy() {
       {/* solution */}
       <section id="solution" className="mt-[50px] scroll-mt-[120px]">
         <SectionHeading>solution</SectionHeading>
-        <div className="relative mt-[18px] grid gap-10 sm:grid-cols-2 cs:grid-cols-[297px_326px_1fr] cs:gap-0 cs:pl-[14px]">
+        {/* One column until the case-study breakpoint, then the frame's three.
+            No sm:grid-cols-2 here — it outranks the cs: rule and drops the
+            solution column onto a second row. */}
+        <div className="relative mt-[18px] grid gap-10 cs:grid-cols-[297px_326px_1fr] cs:gap-0 cs:pl-[14px]">
           {[c.solution.concerns, c.solution.opportunities, c.solution.solutions].map((col, i) => (
             <div
               key={col.title}
@@ -182,14 +153,34 @@ export default function CarpoolingCaseStudy() {
               </ul>
             </div>
           ))}
-          <span className="pointer-events-none absolute left-[175px] top-[331px] hidden cs:block">
-            <CurvedArrow color="#f4ecd2" />
-          </span>
-          <span className="pointer-events-none absolute left-[545px] top-[331px] hidden cs:block">
-            <CurvedArrow color="#d3e9c5" up />
-          </span>
+          <img
+            src={c.solution.arrows.downRight}
+            alt=""
+            width={65}
+            height={52}
+            className="pointer-events-none absolute left-[175px] top-[331px] hidden cs:block"
+            loading="lazy"
+          />
+          <img
+            src={c.solution.arrows.upRight}
+            alt=""
+            width={64}
+            height={42}
+            className="pointer-events-none absolute left-[545px] top-[331px] hidden cs:block"
+            loading="lazy"
+          />
         </div>
       </section>
+
+      {/* brand identity — type specimen only; the rest of the identity work
+          isn't in the frame yet */}
+      <TypeSpecimen
+        className="mt-[50px]"
+        image={c.typography.image}
+        alt={c.typography.alt}
+        width={c.typography.width}
+        height={c.typography.height}
+      />
 
       {/* screens */}
       <section id="screens" className="mt-9 scroll-mt-[120px]">
@@ -198,7 +189,11 @@ export default function CarpoolingCaseStudy() {
             exported artwork is bigger than the phone because it carries a
             soft shadow, so it's oversized and offset to keep the phone
             itself centred in the cell at every width. */}
-        <ul className="mt-[3px] grid grid-cols-2 bg-[#fbeec7] px-4 pb-4 sm:grid-cols-3 sm:px-[55px] sm:pb-[15px]">
+        {/* The band cools from pale blue at the top to white at the bottom,
+            and a white veil sits over the last row so the phones dissolve
+            into the page instead of being cut off. */}
+        <div className="relative mt-[3px]">
+          <ul className="grid grid-cols-2 bg-[linear-gradient(180deg,#eef0f8_0%,#f5f6fb_55%,#ffffff_100%)] px-4 pb-4 sm:grid-cols-3 sm:px-[55px] sm:pb-[15px]">
           {c.screens.map((screen, i) => (
             <li
               key={screen.src}
@@ -216,17 +211,14 @@ export default function CarpoolingCaseStudy() {
                 loading="lazy"
               />
             </li>
-          ))}
-        </ul>
+            ))}
+          </ul>
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-[200px] bg-[linear-gradient(to_top,#ffffff_14%,rgba(255,255,255,0)_100%)]"
+          />
+        </div>
       </section>
-
-      {/* the persona is the last thing written up so far */}
-      <ComingSoonVeil className="mt-[60px]" note={c.comingSoon}>
-        <Persona
-          heading="user persona"
-          persona={{ ...c.persona, photoAlt: `${c.persona.name}, standing in a garden` }}
-        />
-      </ComingSoonVeil>
     </CaseStudyPage>
   );
 }

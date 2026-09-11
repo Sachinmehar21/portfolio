@@ -1,6 +1,5 @@
 // Copy for the 7seers case study (/work/7seers). All lowercase, like the design.
 import type { PersonaData } from "@/components/case-study/Persona";
-import { carpooling } from "@/lib/carpooling";
 
 const A = "/assets/7seers";
 
@@ -18,14 +17,12 @@ export const sevenseers = {
     { label: "research", id: "research" },
     { label: "key-insights", id: "key-insights" },
     { label: "ideation", id: "ideation" },
-    // Not written up yet — the design lists them, so they stay in the index.
-    { label: "solution" },
-    { label: "flow/screen design" },
-    { label: "brand identity" },
+    { label: "solution", id: "solution" },
+    { label: "flow/screen design", id: "screens" },
+    { label: "brand identity", id: "brand-identity" },
+    // Reflection still isn't designed, so it stays an unlinked index entry.
     { label: "reflection" },
   ],
-  comingSoon:
-    "the personas, the solution, the screens, brand identity and reflection are still being written up. they land here soon.",
   overview: {
     text: "7seers is an ai-powered platform that helps tier 2/3 college students in india get placed. students get a role-specific readiness score, practice with ai mock interviews, fix skill gaps through guided learning, and get matched to jobs they actually qualify for. tpos get real-time batch visibility instead of excel sheets.",
     meta: [
@@ -181,15 +178,92 @@ export const sevenseers = {
       },
     ],
   },
-  // The frame currently reuses the carpooling persona verbatim (same photo and
-  // copy); mirrored here so the page matches the design until it's replaced.
+  // 7seers has its own persona now — the frame no longer reuses jigyasa.
   persona: {
-    ...carpooling.persona,
-    photo: `${A}/persona.webp`,
-    photoAlt: `${carpooling.persona.name}, standing in a garden`,
+    name: "nirmala",
+    age: "22 year",
+    photo: `${A}/persona-nirmala.svg`,
+    photoAlt: "nirmala, standing in front of a wall of branches",
+    description:
+      "college-going student and is in her last year of college, searching for internship or a full time job.",
+    groups: [
+      {
+        title: "goal",
+        items: [
+          "find relevant internships and entry-level business opportunities",
+          "build practical, industry-relevant skills",
+          "create a strong resume and improve employability",
+          "explore different career paths within business operations",
+          "get better guidance and support during job preparation",
+        ],
+      },
+      {
+        title: "needs",
+        items: [
+          "a centralized platform to find internships and jobs",
+          "relevant and personalized job opportunities",
+          "practical resources for resume building and interview preparation",
+          "guidance on skills required for different roles",
+          "easier access to opportunities beyond campus placements",
+        ],
+      },
+      {
+        title: "concerns",
+        items: [
+          "finding relevant internships across multiple platforms is time-consuming",
+          "difficult to know which skills are actually required for a job",
+          "uncertainty about what to include in a resume",
+          "limited practical guidance for interview preparation",
+          "campus placement opportunities feel limited and inconsistent",
+          "difficult to discover suitable opportunities outside college placements",
+        ],
+      },
+      {
+        title: "finds useful",
+        items: [
+          "platforms that bring multiple job opportunities into one place",
+          "practical, industry-relevant learning resources",
+          "resume-building guidance",
+          "interview preparation and feedback",
+          "personalized recommendations based on skills and interests",
+          "guidance on career paths and required skills",
+        ],
+      },
+    ],
   } satisfies PersonaData,
   ideation: {
     image: `${A}/stickies.svg`,
     alt: "sticky notes with feature ideas: ai voice mock interview, skill sprint learning, peer mock interview, mentor booking, whatsapp chatbot practice, role-based jri score, readiness-gated job match, video submission review, leaderboard gamification",
   },
+  // Unlike carpooling, 7seers states its solution as a flat list rather than
+  // the concern → opportunity → solution columns.
+  solution: [
+    "7seers shows their skill gap against the specific job and tells them what skills they need to work on.",
+    "they can take job-specific assessments and mock interviews to practice before facing the real interview.",
+    "a readiness score helps them understand where they stand and what they still need to improve.",
+    "we created a separate learning hub for courses, skills, and learning resources, keeping learning and job application journeys distinct.",
+    "instead of asking them to learn everything, 7seers provides role-specific preparation based on the job they’re targeting.",
+  ],
+  // Brand identity is the type specimen, dropped in as exported artwork.
+  typography: {
+    image: `${A}/typography-card.svg`,
+    alt: "type specimen: Work Sans, regular and medium, with upper- and lowercase alphabets and numerals",
+    width: 748,
+    height: 357,
+  },
+  // Wide desktop captures rather than carpooling's phone grid.
+  screens: [
+    {
+      src: `${A}/screen-01.svg`,
+      alt: "readiness panel over a job listing: a 42% readiness score with its jri breakdown, and the backend developer role it is measured against",
+      width: 789,
+      height: 543,
+    },
+    {
+      src: `${A}/screen-02.svg`,
+      alt: "mock assessment in progress: a multiple-choice question, the timer, and the question palette tracking answered and flagged questions",
+      width: 791,
+      height: 487,
+    },
+  ],
 };

@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Quicksand } from "next/font/google";
 import Nav from "@/components/Nav";
 import SmoothScroll from "@/components/SmoothScroll";
@@ -16,6 +16,9 @@ type Props = {
   title: string;
   nav: NavItem[];
   hero: { src: string; alt: string; width: number; height: number };
+  /** Colour of the bar beside every SectionHeading. Amber is the 7seers
+   *  default; carpooling overrides it with the lavender from its frames. */
+  accent?: string;
   children: ReactNode;
 };
 
@@ -23,9 +26,18 @@ type Props = {
 // section index on the left and the postage-stamp hero at the top of the
 // 845px content column. 1049px = nav column (204) + content (845), centred
 // in the 1440 frame exactly like the Figma designs.
-export default function CaseStudyPage({ title, nav, hero, children }: Props) {
+export default function CaseStudyPage({
+  title,
+  nav,
+  hero,
+  accent = "#f6d76c",
+  children,
+}: Props) {
   return (
-    <div className={`${quicksand.variable} relative flex-1 overflow-x-clip font-quicksand`}>
+    <div
+      className={`${quicksand.variable} relative flex-1 overflow-x-clip font-quicksand`}
+      style={{ "--cs-accent": accent } as CSSProperties}
+    >
       <SmoothScroll />
       <Nav variant="page" />
 

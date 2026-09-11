@@ -4,7 +4,8 @@
 export const carpooling = {
   title: "carpoolingapp",
   hero: {
-    image: "/assets/rideabit/hero.webp",
+    // Re-exported lavender version; the old hero.webp was the yellow theme.
+    image: "/assets/rideabit/hero.svg",
     alt: "collage of the carpooling app home screen, riders in cars and a card reading all riders are verified",
   },
   nav: [
@@ -15,12 +16,10 @@ export const carpooling = {
     { label: "ideation", id: "ideation" },
     { label: "solution", id: "solution" },
     { label: "flow/screen design", id: "screens" },
-    // The design lists these two, but the frame has no content for them yet.
-    { label: "brand identity" },
+    { label: "brand identity", id: "brand-identity" },
+    // The design lists reflection, but the frame has no content for it yet.
     { label: "reflection" },
   ],
-  comingSoon:
-    "the persona, brand identity and reflection are still being written up. they land here soon.",
   overview: {
     text: "a carpooling app designed for frequent long- and short-distance travellers to share rides and split fuel costs. it connects people heading in the same direction, helping riders save on expensive cab fares while allowing drivers to share their petrol expenses.",
     meta: [
@@ -126,12 +125,31 @@ export const carpooling = {
       },
     ],
   },
-  insights: [
-    "safety comes before convenience: jigyasa finds carpooling useful and affordable, but will reject a ride if she doesn't feel safe.",
-    "visibility builds trust: knowing who the driver and other passengers are helps her feel more confident about sharing a ride.",
-    "long-distance rides need more trust: her safety concerns increase as the distance and duration of the journey increase.",
-    "verification creates confidence: verified identities and vehicle details make travelling with strangers feel more accountable.",
-  ],
+  insights: {
+    heading: "key insights that shaped the design",
+    items: [
+      {
+        title: "safety comes before convenience",
+        action:
+          "jigyasa finds carpooling useful and affordable, but will reject a ride if she doesn’t feel safe.",
+      },
+      {
+        title: "visibility builds trust",
+        action:
+          "knowing who the driver and other passengers are helps her feel more confident about sharing a ride.",
+      },
+      {
+        title: "long-distance rides need more trust",
+        action:
+          "her safety concerns increase as the distance and duration of the journey increase.",
+      },
+      {
+        title: "verification creates confidence",
+        action:
+          "verified identities and vehicle details make travelling with strangers feel more accountable.",
+      },
+    ],
+  },
   ideation: {
     image: "/assets/rideabit/ideation-stickies.svg",
     alt: "sticky notes with rider questions: who is driving, who else is travelling, is the car genuine, can i identify the car, what happens if something goes wrong, am i the only woman, can someone track my journey, can i reject a ride",
@@ -170,6 +188,21 @@ export const carpooling = {
         "safety/reporting mechanisms",
       ],
     },
+    // Hand-drawn connectors exported from the frame: yellow leads the eye
+    // from a concern down into the opportunity, green from the opportunity
+    // up into the solution.
+    arrows: {
+      downRight: "/assets/rideabit/arrow-down-right.svg",
+      upRight: "/assets/rideabit/arrow-up-right.svg",
+    },
+  },
+  // Brand identity is just the type specimen so far, and it comes straight
+  // out of Figma as artwork rather than being rebuilt in CSS.
+  typography: {
+    image: "/assets/rideabit/typography-card.svg",
+    alt: "type specimen: Manrope, regular and medium, with upper- and lowercase alphabets and numerals",
+    width: 748,
+    height: 357,
   },
   screens: [
     { src: "/assets/rideabit/screen-01.webp", alt: "onboarding: empty seats. empty silence." },

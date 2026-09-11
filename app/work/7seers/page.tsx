@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import CaseStudyPage from "@/components/case-study/CaseStudyPage";
 import SectionHeading from "@/components/case-study/SectionHeading";
 import Persona from "@/components/case-study/Persona";
-import ComingSoonVeil from "@/components/case-study/ComingSoonVeil";
+import KeyInsights from "@/components/case-study/KeyInsights";
+import TypeSpecimen from "@/components/case-study/TypeSpecimen";
 import { body, cardShadow, cardTitle } from "@/components/case-study/styles";
 import { sevenseers as s } from "@/lib/sevenseers";
 
@@ -271,27 +272,11 @@ export default function SevenSeersCaseStudy() {
       </section>
 
       {/* key insights */}
-      <section id="key-insights" className="mt-[88px] scroll-mt-[120px]">
-        <SectionHeading>{s.insights.heading}</SectionHeading>
-        <ol className="mt-[7px] space-y-[42px] pl-[35px] cs:pl-[50px]">
-          {s.insights.items.map((item, i) => (
-            <li key={item.title} className="relative">
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -left-[35px] top-1/2 -translate-y-1/2 select-none text-[72px] font-bold leading-none text-[#bdb1f8]"
-              >
-                {i + 1}
-              </span>
-              <div className="max-w-[705px] rounded-lg bg-[#f5f2e9] py-[14px] pl-[8px] pr-[14px] cs:w-fit">
-                <h3 className={cardTitle}>{item.title}</h3>
-                <p className="mt-[6px] text-[14px] font-medium leading-[22px] text-[#a16ae1]">
-                  → {item.action}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </section>
+      <KeyInsights className="mt-[88px]" heading={s.insights.heading} items={s.insights.items} />
+
+      {/* user personas — the frame places them between the insights and the
+          ideation they feed */}
+      <Persona className="mt-[72px]" heading="user personas" persona={s.persona} />
 
       {/* ideation */}
       <section id="ideation" className="mt-[72px] scroll-mt-[120px]">
@@ -308,10 +293,56 @@ export default function SevenSeersCaseStudy() {
         </figure>
       </section>
 
-      {/* the personas are the last thing written up so far */}
-      <ComingSoonVeil className="mt-[60px]" note={s.comingSoon}>
-        <Persona heading="user personas" persona={s.persona} />
-      </ComingSoonVeil>
+      {/* solution — a flat list in this frame, not carpooling's three columns */}
+      <section id="solution" className="mt-[64px] scroll-mt-[120px]">
+        <SectionHeading>solution</SectionHeading>
+        <ul className={`mt-[12px] space-y-[18px] cs:pl-[27px] ${body}`}>
+          {s.solution.map((item) => (
+            <li key={item} className="flex gap-[10px]">
+              <span aria-hidden className="shrink-0">
+                ·
+              </span>
+              <span className="max-w-[672px]">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* brand identity — type specimen only; the rest of the identity work
+          isn't in the frame yet */}
+      <TypeSpecimen
+        className="mt-[54px]"
+        image={s.typography.image}
+        alt={s.typography.alt}
+        width={s.typography.width}
+        height={s.typography.height}
+      />
+
+      {/* screens — wide desktop captures stacked down the column, fading into
+          the page at the bottom the way the frame does */}
+      <section id="screens" className="mt-9 scroll-mt-[120px]">
+        <SectionHeading>screens</SectionHeading>
+        <div className="relative mt-[3px]">
+          <ul className="space-y-[26px] bg-[linear-gradient(180deg,#eef0f8_0%,#f5f6fb_55%,#ffffff_100%)] px-4 py-[26px] sm:px-[30px]">
+            {s.screens.map((screen) => (
+              <li key={screen.src}>
+                <img
+                  src={screen.src}
+                  alt={screen.alt}
+                  width={screen.width}
+                  height={screen.height}
+                  className="mx-auto block h-auto w-full"
+                  loading="lazy"
+                />
+              </li>
+            ))}
+          </ul>
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-[200px] bg-[linear-gradient(to_top,#ffffff_14%,rgba(255,255,255,0)_100%)]"
+          />
+        </div>
+      </section>
     </CaseStudyPage>
   );
 }
